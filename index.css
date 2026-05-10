@@ -44,7 +44,7 @@ body{
  }
 
  .menu a{
-  color: #eeeaf0;
+  color: #cfcfd6;
   padding: 0;
   display: block;
   text-decoration: none;
@@ -93,9 +93,10 @@ body{
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  width: 250px;      /* Defina a largura desejada */
-  min-width: 150px;
+  gap: 10px;
+  width: 100%;
+  max-width: 250px;
+  min-width: 0;
   
 }
 
@@ -103,12 +104,13 @@ body{
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 450px;      /* Defina a largura desejada */
-  min-width: 150px;
+  width: 100%;
+  max-width: 450px;
+  min-width: 0;
 }
  .menu a{
-  color: #f5e106;
-  padding: 0;
+  color: #1f1c06 !important;
+  padding: 4px 0;
   display: block;
   text-decoration: none;
  }
