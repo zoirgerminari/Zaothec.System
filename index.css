@@ -1,0 +1,116 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  /* background: linear-gradient(to bottom, #49a8df, #1d1ba5); */
+  min-height: 100vh;
+  background-image: url('img/lagoaSol.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.header{
+/*color: #1578a5;*/
+  /*background: linear-gradient(to bottom, #473806, #ebdc55);*/
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.header h1 {
+  margin: 0;
+  background: linear-gradient(to right, #0b2a6f, #5cc8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.top-bar {
+  display: flex;
+  align-items: flex-start;
+}
+
+ .menu {
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+ }
+
+ .menu a{
+  color: #eeeaf0;
+  padding: 0;
+  display: block;
+  text-decoration: none;
+ }
+
+.img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+}
+
+ .under-construction {
+  color: red;
+  text-align: center;
+  padding: 20px;
+}
+
+.texto-final {
+  color: #111111;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 80px;
+}
+
+@media screen and (max-width: 780px) {
+
+  html, body {
+    margin: 0;              /* evita rolagem lateral */
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+.top-bar {
+   margin: 10px; 
+    padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px; /* Espaço entre menu e imagens */
+  
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 250px;      /* Defina a largura desejada */
+  min-width: 150px;
+  
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 450px;      /* Defina a largura desejada */
+  min-width: 150px;
+}
+ .menu a{
+  color: #f5e106;
+  padding: 0;
+  display: block;
+  text-decoration: none;
+ }
+
+  }

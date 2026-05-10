@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.game-hub {
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background-image: url('img/quadro_italiapng.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.game-hub h1 {
+    color: #d35908;
+    font-size: 2.2rem;
+}
+
+.game-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.game-link {
+    display: inline-block;
+    min-width: 230px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #10c519;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.game-link:hover {
+    background: #6b2fa0;
+}
+
+.game2 a{
+      background-position: center;
+    background-size: cover; 
+    color: rgb(252, 247, 247);
+    text-decoration: none;
+    margin: auto;
+     width: 100%;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.game{
+    width: 100%;
+    height: 100vh;
+    border-bottom: 30px solid rgb(4, 12, 4);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#361238, #220b27);
+}
+.game2{
+   
+  background: linear-gradient(to bottom, #460f9e, #7127b6);
+  padding: 10px;
+  text-align: center;
+
+}
+
+button {
+    background: rgb(20, 95, 105);
+    color: rgb(230, 12, 12);
+      border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    padding: 4rem;
+    position: absolute;
+    right: 50vw;
+    top: 50vh;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.game-over {
+    width: 100%;
+    height: 100vh;
+    background: rgba(54, 4, 100, 0.322);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.game-over h1 {
+    font-size: 6rem;
+    color: red;
+    text-align: left;
+    margin-top: 0rem;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    right: -480px;
+    width: 350px;
+   
+}
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    /*right: 1200px;*/
+    
+}
+
+ @keyframes missel4-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+
+.clouds {
+    width: 550px;
+    position: absolute;
+    top: 0;
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+.pipe-animation {
+    animation: pipe-animation 2s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.jump {
+    animation: jump 800ms ease-out;
+}
+
+@keyframes jump {
+    0% {
+        bottom:0;
+    }
+
+    40% {
+        bottom: 200px;
+    }
+
+    50% {
+        bottom: 200px;
+    }
+
+    60% {
+        bottom: 200px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+@media screen and (max-width: 780px) {
+
+.pipe {
+    position: absolute;
+    bottom: 20;
+    right: -480px;
+    width: 150px;
+   
+}
+.mario{
+    width: 70px;
+    position: absolute;
+    bottom: 0;
+    /*right: 1200px;*/
+    
+}
+}

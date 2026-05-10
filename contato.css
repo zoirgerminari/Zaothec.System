@@ -1,0 +1,35 @@
+
+body {
+      color:rgb(51, 44, 44);
+    background-image: url('img/lagoaSol.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+    font-weight: bold;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 0px;
+    margin-bottom: auto;
+     text-decoration: none;
+     text-align: center;
+}
+
+.item {
+   color:rgb(37, 45, 49);
+    
+    font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+    font-weight: bold;
+  align-items: left;
+  gap: 25px;
+  
+}
+.item p {
+   color: rgb(223, 203, 203);
+   font-size: 20px;
+   font-weight: bold;
+   text-align: left;
+  }
