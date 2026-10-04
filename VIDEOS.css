@@ -10,6 +10,20 @@ body {
       #111412;
 }
 
+.back-btn {
+    display: inline-block;
+    margin: 20px 0 0 20px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #7be1a5, #3da86a);
+    color: #08150d;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .header {
     color: #edf7ee;
     background: rgba(18, 23, 20, 0.9);

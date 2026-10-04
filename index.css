@@ -51,6 +51,7 @@ a {
   justify-content: space-between;
   gap: 20px;
   padding: 18px 0 28px;
+  position: relative;
 }
 
 .brand {
@@ -81,6 +82,31 @@ a {
   color: var(--primary);
   transform: translateY(-1px);
 }
+
+.menu-toggle {
+  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 99px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
 
 .hero {
   display: grid;
@@ -308,6 +334,39 @@ a {
   }
 }
 
+.menu {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 0 4px;
+}
+
+.topbar.menu-open .menu {
+  display: flex;
+}
+
+.topbar.menu-open .menu-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(4.5px, 4.5px);
+}
+
+.topbar.menu-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.topbar.menu-open .menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(4.5px, -4.5px);
+}
+
+.menu a {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--panel-border);
+}
+
 @media (max-width: 640px) {
   .page-shell {
     width: min(100% - 20px, 1200px);
@@ -315,12 +374,10 @@ a {
   }
 
   .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu {
-    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .btn {

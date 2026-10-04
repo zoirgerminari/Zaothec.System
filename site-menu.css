@@ -1,0 +1,113 @@
+.page-header {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(17, 20, 18, 0.9);
+  border: 1px solid rgba(123, 225, 165, 0.22);
+  border-radius: 18px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+}
+
+.page-brand {
+  color: #edf7ee;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+}
+
+.site-nav a {
+  color: #dfeae2;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: #7be1a5;
+}
+
+.menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(123, 225, 165, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: #edf7ee;
+}
+
+@media (max-width: 760px) {
+  .page-header {
+    flex-wrap: wrap;
+    padding: 14px 16px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0 4px;
+  }
+
+  .page-header.menu-open .site-nav {
+    display: flex;
+  }
+
+  .page-header.menu-open .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(4.5px, 4.5px);
+  }
+
+  .page-header.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .page-header.menu-open .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(4.5px, -4.5px);
+  }
+
+  .site-nav a {
+    width: 100%;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(123, 225, 165, 0.16);
+    border-radius: 10px;
+  }
+}
