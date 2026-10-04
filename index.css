@@ -1,14 +1,14 @@
 ﻿:root {
-  --bg: #111412;
-  --bg-soft: #1a221d;
-  --panel: rgba(18, 23, 20, 0.9);
-  --panel-border: rgba(124, 143, 127, 0.22);
-  --text: #edf7ee;
-  --muted: #b7c7bb;
-  --primary: #7be1a5;
-  --secondary: #3da86a;
-  --accent: #2d5d42;
-  --shadow: rgba(0, 0, 0, 0.3);
+  --bg: #0f1113;
+  --bg-soft: #171b1d;
+  --panel: rgba(18, 20, 21, 0.96);
+  --panel-border: rgba(170, 180, 176, 0.15);
+  --text: #edf5ef;
+  --muted: #b7c3bb;
+  --primary: #92dfaf;
+  --secondary: #4ca76d;
+  --accent: #1d3127;
+  --shadow: rgba(0, 0, 0, 0.32);
 }
 
 * {
@@ -24,8 +24,8 @@ body {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(123, 225, 165, 0.14), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(61, 168, 106, 0.18), transparent 34%),
+    radial-gradient(circle at top left, rgba(146, 223, 175, 0.08), transparent 26%),
+    radial-gradient(circle at bottom right, rgba(76, 167, 109, 0.09), transparent 30%),
     var(--bg);
   color: var(--text);
 }
@@ -177,7 +177,7 @@ a {
 
 .panel-card {
   width: 100%;
-  background: linear-gradient(180deg, rgba(13, 20, 30, 0.96), rgba(14, 26, 36, 0.92));
+  background: linear-gradient(180deg, rgba(20, 23, 25, 0.96), rgba(24, 28, 29, 0.94));
   border: 1px solid var(--panel-border);
   border-radius: 24px;
   padding: 28px 22px;
@@ -253,7 +253,7 @@ a {
 
 .project-card {
   display: block;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.015);
   border: 1px solid var(--panel-border);
   border-radius: 18px;
   padding: 22px 20px;
