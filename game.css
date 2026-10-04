@@ -6,6 +6,12 @@
 
 body {
     min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, rgba(123, 225, 165, 0.14), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(61, 168, 106, 0.18), transparent 34%),
+      #111412;
+    color: #edf7ee;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .game-hub {
@@ -17,7 +23,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 24px;
-    background-image: url('img/quadro_italiapng.png');
+    background: rgba(17, 20, 18, 0.8);
+    background-image: none;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,7 +32,7 @@ body {
 }
 
 .game-hub h1 {
-    color: #d35908;
+    color: #7be1a5;
     font-size: 2.2rem;
 }
 
@@ -40,14 +47,15 @@ body {
     min-width: 230px;
     padding: 12px 18px;
     border-radius: 10px;
-    background: #10c519;
-    color: #ffffff;
+    background: linear-gradient(135deg, #7be1a5, #3da86a);
+    color: #08150d;
     text-decoration: none;
     font-weight: bold;
 }
 
 .game-link:hover {
-    background: #6b2fa0;
+    background: #2d5d42;
+    color: #edf7ee;
 }
 
 .game2 a{
@@ -65,23 +73,23 @@ body {
 .game{
     width: 100%;
     height: 100vh;
-    border-bottom: 30px solid rgb(4, 12, 4);
+    border-bottom: 30px solid rgb(26, 34, 29);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#361238, #220b27);
+    background: linear-gradient(#111412, #1a221d);
 }
 .game2{
-   
-  background: linear-gradient(to bottom, #460f9e, #7127b6);
+  
+  background: linear-gradient(to bottom, #1e2a22, #111412);
   padding: 10px;
   text-align: center;
 
 }
 
 button {
-    background: rgb(20, 95, 105);
-    color: rgb(230, 12, 12);
+    background: linear-gradient(135deg, #7be1a5, #3da86a);
+    color: #08150d;
       border-radius: 50px;
     font-weight: bold;
     font-size: 1.5rem;

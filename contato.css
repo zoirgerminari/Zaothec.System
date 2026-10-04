@@ -1,20 +1,18 @@
 
 body {
-      color:rgb(51, 44, 44);
-    background-image: url('img/lagoaSol.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-    font-weight: bold;
-    margin-right: 100px;
-    margin-left: 100px;
-    margin-top: 0px;
-    margin-bottom: auto;
-     text-decoration: none;
-     text-align: center;
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  color: #edf7ee;
+  background:
+    radial-gradient(circle at top left, rgba(123, 225, 165, 0.14), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(61, 168, 106, 0.18), transparent 34%),
+    #111412;
+  padding: 32px 80px;
 }
 
   @media screen and (max-width: 780px) {

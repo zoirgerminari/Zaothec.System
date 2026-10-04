@@ -1,7 +1,12 @@
 body {
-    color:rgb(9, 94, 143);
-     background: linear-gradient(to bottom, #473806, #ebdc55);
+    margin: 0;
+    min-height: 100vh;
+    color: #edf7ee;
     font-family: Arial, Helvetica, sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(123, 225, 165, 0.14), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(61, 168, 106, 0.18), transparent 34%),
+      #111412;
 }
 .item {
   display: flex;
@@ -12,18 +17,24 @@ body {
 .item img {
   width: 200px; /* ou o tamanho desejado */
   height: auto;
-  border: 5px solid rgb(250, 249, 244);
+  border: 5px solid rgba(123, 225, 165, 0.6);
+  border-radius: 14px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 }
 
 .item p {
   margin: 40px;
   font-size: 26px;
+  color: #edf7ee;
 }
 
 /*.................................mobile..................................*/
 @media screen and (max-width: 780px) {
   body {
-    background-color: rgb(16, 160, 185);
+    background:
+      radial-gradient(circle at top left, rgba(123, 225, 165, 0.14), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(61, 168, 106, 0.18), transparent 34%),
+      #111412;
     font-size: 1rem;
   }
 
@@ -34,5 +45,6 @@ body {
   .item p {
     font-size: 1.2rem; /* ajuste para telas menores */
     margin: 20px;
+    color: #edf7ee;
   }
 }
