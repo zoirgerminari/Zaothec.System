@@ -24,6 +24,7 @@
     background-repeat: repeat;
     background-size: cover;
     overflow: hidden;
+    touch-action: none;
 }
 
 #menu {

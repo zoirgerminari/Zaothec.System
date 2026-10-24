@@ -96,6 +96,10 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(#111412, #1a221d);
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 .game2{
   
@@ -236,6 +240,8 @@ button {
 
 .game {
     background-size: cover;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -258,5 +264,10 @@ button {
     bottom: 0;
     /*right: 1200px;*/
     
+}
+
+.game-over h1 {
+    font-size: 3rem;
+    text-align: center;
 }
 }

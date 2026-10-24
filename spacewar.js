@@ -82,16 +82,30 @@ const atirar = () => {
 }
 
 document.addEventListener("keydown", (tecla) => {
-  if (tecla.key === " ") {
+  if (tecla.code === "Space" || tecla.key === " " || tecla.key === "Spacebar") {
     estaAtirando = true;
   }
 });
 
 document.addEventListener("keyup", (tecla) => {
-  if (tecla.key === " ") {
+  if (tecla.code === "Space" || tecla.key === " " || tecla.key === "Spacebar") {
     estaAtirando = false;
   }
-})
+});
+
+const iniciarTiroPorToque = () => {
+  estaAtirando = true;
+};
+
+const pararTiroPorToque = () => {
+  estaAtirando = false;
+};
+
+cenario.addEventListener("pointerdown", iniciarTiroPorToque);
+cenario.addEventListener("pointerup", pararTiroPorToque);
+cenario.addEventListener("pointerleave", pararTiroPorToque);
+cenario.addEventListener("touchstart", iniciarTiroPorToque, { passive: true });
+cenario.addEventListener("touchend", pararTiroPorToque, { passive: true });
 
 const criaTiros = (posicaoLeftTiro, posicaoTopTiro) => {
   const tiro = document.createElement("div");
