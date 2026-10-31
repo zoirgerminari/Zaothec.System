@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUM Web - Zaothec Systems</title>
+  <link rel="stylesheet" href="delphi-num.css">
+</head>
+<body>
+  <a href="game.html" class="back-btn">BACK</a>
+
+  <main class="num-app">
+    <h1>NUM Web</h1>
+    <p class="subtitle">Versao web do app Delphi 7</p>
+
+    <section class="panel">
+      <label class="input-label">Digite 10 caracteres:</label>
+      <div class="grid" id="lettersGrid">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 1">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 2">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 3">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 4">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 5">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 6">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 7">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 8">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 9">
+        <input type="text" maxlength="1" class="letter" value="*" aria-label="caractere 10">
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" type="button">START</button>
+        <button id="resetBtn" type="button">RESET</button>
+        <button id="meaningBtn" type="button">SIGNIFICATE</button>
+      </div>
+
+      <div class="result-box">
+        <span>YOUR NUMBER IS =&gt;</span>
+        <strong id="finalNumber">0</strong>
+      </div>
+
+      <p id="meaningText" class="meaning">Digite alguma coisa</p>
+    </section>
+  </main>
+
+  <script src="delphi-num.js"></script>
+</body>
+</html>
