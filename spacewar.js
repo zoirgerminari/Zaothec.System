@@ -16,6 +16,8 @@ const velocidadeTiro = 20;
 const velocidadeNaveInimigas = 6;
 
 let estaAtirando = false;
+let jogoIniciado = false;
+let toqueAtivo = false;
 
 let tiroAtual = 0;
 
@@ -33,6 +35,29 @@ let posicaoHorizontal = larguraCenario / 2 - 50;
 let posicaoVertical = alturaCenario - alturaCeNave;
 let direcaoHorizontal = 0;
 let direcaoVertical = 0;
+
+const limitarPosicaoNave = () => {
+  if (posicaoHorizontal < 0) {
+    posicaoHorizontal = 0;
+  } else if (posicaoHorizontal + larguraNave > larguraCenario) {
+    posicaoHorizontal = larguraCenario - larguraNave;
+  }
+
+  if (posicaoVertical < 0) {
+    posicaoVertical = 0;
+  } else if (posicaoVertical + alturaCeNave > alturaCenario) {
+    posicaoVertical = alturaCenario - alturaCeNave;
+  }
+};
+
+const atualizarNavePorPonto = (clientX, clientY) => {
+  const area = cenario.getBoundingClientRect();
+  posicaoHorizontal = clientX - area.left - (larguraNave / 2);
+  posicaoVertical = clientY - area.top - (alturaCeNave / 2);
+  limitarPosicaoNave();
+  nave.style.left = posicaoHorizontal + "px";
+  nave.style.top = posicaoVertical + "px";
+};
 
 const teclaPressionada = (tecla) => {
   if (tecla.key === "ArrowRight") {
@@ -57,16 +82,7 @@ const teclaSolta = (tecla) => {
 const moveNave = () => {
   posicaoHorizontal += direcaoHorizontal * velocidadeNave;
   posicaoVertical += direcaoVertical * velocidadeNave;
-  if (posicaoHorizontal < 0) {
-    posicaoHorizontal = 0;
-  } else if (posicaoHorizontal + larguraNave > larguraCenario) {
-    posicaoHorizontal = larguraCenario - larguraNave;
-  }
-  if (posicaoVertical < 0) {
-    posicaoVertical = 0;
-  } else if (posicaoVertical + alturaCeNave > alturaCenario) {
-    posicaoVertical = alturaCenario - alturaCeNave;
-  }
+  limitarPosicaoNave();
   nave.style.left = posicaoHorizontal + "px";
   nave.style.top = posicaoVertical + "px";
 }
@@ -93,19 +109,51 @@ document.addEventListener("keyup", (tecla) => {
   }
 });
 
-const iniciarTiroPorToque = () => {
+const iniciarTiroPorToque = (evento) => {
+  if (!jogoIniciado) return;
+  if (evento && evento.target && evento.target.id === "iniciar") return;
+  toqueAtivo = true;
   estaAtirando = true;
+  if (evento && typeof evento.clientX === "number" && typeof evento.clientY === "number") {
+    atualizarNavePorPonto(evento.clientX, evento.clientY);
+  }
 };
 
 const pararTiroPorToque = () => {
+  toqueAtivo = false;
   estaAtirando = false;
 };
 
+const moverNavePorToque = (evento) => {
+  if (!jogoIniciado || !toqueAtivo) return;
+  if (typeof evento.clientX === "number" && typeof evento.clientY === "number") {
+    atualizarNavePorPonto(evento.clientX, evento.clientY);
+  }
+};
+
+const iniciarTiroTouch = (evento) => {
+  if (!jogoIniciado) return;
+  if (!evento.touches || !evento.touches.length) return;
+  toqueAtivo = true;
+  estaAtirando = true;
+  atualizarNavePorPonto(evento.touches[0].clientX, evento.touches[0].clientY);
+};
+
+const moverNaveTouch = (evento) => {
+  if (!jogoIniciado || !toqueAtivo) return;
+  if (!evento.touches || !evento.touches.length) return;
+  atualizarNavePorPonto(evento.touches[0].clientX, evento.touches[0].clientY);
+};
+
 cenario.addEventListener("pointerdown", iniciarTiroPorToque);
+cenario.addEventListener("pointermove", moverNavePorToque);
 cenario.addEventListener("pointerup", pararTiroPorToque);
 cenario.addEventListener("pointerleave", pararTiroPorToque);
-cenario.addEventListener("touchstart", iniciarTiroPorToque, { passive: true });
+cenario.addEventListener("pointercancel", pararTiroPorToque);
+cenario.addEventListener("touchstart", iniciarTiroTouch, { passive: true });
+cenario.addEventListener("touchmove", moverNaveTouch, { passive: true });
 cenario.addEventListener("touchend", pararTiroPorToque, { passive: true });
+cenario.addEventListener("touchcancel", pararTiroPorToque, { passive: true });
 
 const criaTiros = (posicaoLeftTiro, posicaoTopTiro) => {
   const tiro = document.createElement("div");
@@ -259,6 +307,9 @@ const audioExplosoes = () => {
 }
 
 const gameOver = () => {
+  jogoIniciado = false;
+  toqueAtivo = false;
+  estaAtirando = false;
   document.removeEventListener("keydown", teclaPressionada);
   document.removeEventListener("keyup", teclaSolta);
   clearInterval(checaMoveNaveInimigas);
@@ -290,6 +341,7 @@ const gameOver = () => {
 }
 
 const iniciarJogo = () => {
+  jogoIniciado = true;
   document.addEventListener("keydown", teclaPressionada);
   document.addEventListener("keyup", teclaSolta);
   checaMoveNave = setInterval(moveNave, 50);
