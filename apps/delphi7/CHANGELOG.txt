@@ -1,0 +1,7 @@
+DELPHI7 APP CHANGELOG
+
+Formato sugerido:
+[YYYY-MM-DD] versao - resumo
+
+Exemplo:
+[2026-10-31] v1.0.0 - primeira publicacao do pacote no site

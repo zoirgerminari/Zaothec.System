@@ -76,6 +76,50 @@ body {
     color: #edf7ee;
 }
 
+.app-box {
+    width: min(760px, 92vw);
+    margin-top: 14px;
+    padding: 18px;
+    border: 1px solid rgba(123, 225, 165, 0.4);
+    border-radius: 14px;
+    background: rgba(123, 225, 165, 0.08);
+}
+
+.app-box h2 {
+    color: #7be1a5;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.app-box p {
+    color: #d7efe0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.app-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7be1a5, #3da86a);
+    color: #08150d;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.app-link:hover {
+    background: #2d5d42;
+    color: #edf7ee;
+}
+
+.app-note {
+    margin-top: 10px;
+    color: #a7cbb6;
+    font-size: 0.82rem;
+    word-break: break-word;
+}
+
 .game2 a{
       background-position: center;
     background-size: cover; 
@@ -236,6 +280,19 @@ button {
 .game-link {
     min-width: 180px;
     padding: 10px 14px;
+}
+
+.app-box {
+    width: 94vw;
+    padding: 14px;
+}
+
+.app-box p {
+    font-size: 0.9rem;
+}
+
+.app-link {
+    width: 100%;
 }
 
 .game {
