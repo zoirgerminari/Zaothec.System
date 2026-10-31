@@ -10,6 +10,18 @@ const CAD2 = '01234567891234567891234567812345678912345678912345678';
 
 let lastNumber = 0;
 
+const KABBALAH_MEANINGS = {
+  1: 'Number 1: Leadership, initiative, and creation.',
+  2: 'Number 2: Balance, partnership, and diplomacy.',
+  3: 'Number 3: Expression, creativity, and communication.',
+  4: 'Number 4: Structure, discipline, and stability.',
+  5: 'Number 5: Change, freedom, and movement.',
+  6: 'Number 6: Harmony, responsibility, and care.',
+  7: 'Number 7: Spiritual search, study, and reflection.',
+  8: 'Number 8: Power, achievement, and material mastery.',
+  9: 'Number 9: Compassion, completion, and service.'
+};
+
 const focusLetter = (index) => {
   if (index < 0 || index >= letters.length) return;
   letters[index].focus();
@@ -62,16 +74,16 @@ const resetFields = () => {
   });
   lastNumber = 0;
   finalNumberEl.textContent = '0';
-  meaningTextEl.textContent = 'Digite alguma coisa';
+  meaningTextEl.textContent = 'Type something';
   focusLetter(0);
 };
 
 const showMeaning = () => {
   if (lastNumber >= 1 && lastNumber <= 9) {
-    meaningTextEl.textContent = `voce e o numero ${lastNumber}`;
+    meaningTextEl.textContent = KABBALAH_MEANINGS[lastNumber];
     return;
   }
-  meaningTextEl.textContent = 'Digite alguma coisa';
+  meaningTextEl.textContent = 'Type something and press START first.';
 };
 
 letters.forEach((input, index) => {

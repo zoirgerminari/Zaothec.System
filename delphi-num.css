@@ -91,17 +91,18 @@ h1 {
 
 button {
   border: none;
-  border-radius: 10px;
-  padding: 10px 14px;
-  background: linear-gradient(135deg, #7be1a5, #3da86a);
-  color: #08150d;
+  border-radius: 5px;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #000000;
   font-weight: 800;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 button:hover {
-  background: #2d5d42;
-  color: #edf7ee;
+  background: #d9d9d9;
+  color: #000000;
 }
 
 .result-box {
