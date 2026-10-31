@@ -8,6 +8,9 @@ const gameOver = document.querySelector('.game-over')
 audioStart = new Audio('audio_theme.mp3')
 audioGameOver = new Audio('audio_gameover.mp3')
 
+const getMarioBaseWidth = () => (window.innerWidth <= 780 ? '70px' : '150px')
+const getMarioHitWidth = () => (window.innerWidth <= 780 ? '50px' : '80px')
+
 
 const startGame = () => {
   pipe.classList.add('pipe-animation')
@@ -21,9 +24,10 @@ const restartGame = () => {
   gameOver.style.display = 'none'
   pipe.style.left = ''
   pipe.style.right = '0'
-  mario.src = 'img/mario.gif '  // AGORA ESTA OK                 
-  mario.style.width = '150px'
+  mario.src = 'img/mario.gif'
+  mario.style.width = getMarioBaseWidth()
   mario.style.bottom = '0'
+  mario.style.marginLeft = '0'
 
   start.style.display = 'none'
 
@@ -58,7 +62,7 @@ const loop = () => {
       mario.style.bottom = `${marioPosition}px`
 
       mario.src = 'img/game-over.gif'
-      mario.style.width = '80px'
+      mario.style.width = getMarioHitWidth()
       mario.style.marginLeft = '50px'
       
       
