@@ -10,9 +10,20 @@ const CAD2 = '01234567891234567891234567812345678912345678912345678';
 
 let lastNumber = 0;
 
+const focusLetter = (index) => {
+  if (index < 0 || index >= letters.length) return;
+  letters[index].focus();
+  letters[index].select();
+};
+
 const sanitizeChar = (value) => {
   if (!value) return '*';
-  const char = value.charAt(0);
+
+  const normalized = String(value).trim();
+  if (!normalized) return '*';
+
+  // Keep the most recently typed character so replacing "*" works naturally.
+  const char = normalized.charAt(normalized.length - 1);
   return CAD1.includes(char) ? char : '*';
 };
 
@@ -52,7 +63,7 @@ const resetFields = () => {
   lastNumber = 0;
   finalNumberEl.textContent = '0';
   meaningTextEl.textContent = 'Digite alguma coisa';
-  letters[0].focus();
+  focusLetter(0);
 };
 
 const showMeaning = () => {
@@ -64,10 +75,21 @@ const showMeaning = () => {
 };
 
 letters.forEach((input, index) => {
+  input.addEventListener('focus', () => {
+    input.select();
+  });
+
   input.addEventListener('input', () => {
     input.value = sanitizeChar(input.value);
     if (input.value.length >= 1 && index < letters.length - 1) {
-      letters[index + 1].focus();
+      focusLetter(index + 1);
+    }
+  });
+
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Backspace' && (input.value === '' || input.value === '*') && index > 0) {
+      event.preventDefault();
+      focusLetter(index - 1);
     }
   });
 });
@@ -75,3 +97,5 @@ letters.forEach((input, index) => {
 startBtn.addEventListener('click', calculate);
 resetBtn.addEventListener('click', resetFields);
 meaningBtn.addEventListener('click', showMeaning);
+
+focusLetter(0);
